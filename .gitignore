@@ -1,0 +1,8 @@
+# Dependency directories
+/node_modules
+
+# NPM package lock files (if not using Yarn or pnpm exclusively)
+package-lock.json
+
+# Editor/IDE specific files
+.vscode/

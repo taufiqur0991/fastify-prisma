@@ -28,8 +28,17 @@ async function main() {
       password: await bcrypt.hash("password", 10),
     },
   });
+  const user2 = await prisma.user.upsert({
+    where: { email: "user@local.com" },
+    update: {},
+    create: {
+      email: "user@local.com",
+      name: "User 2",
+      password: await bcrypt.hash("password", 10),
+    },
+  });
 
-  console.log({ user })
+  console.log({ user , user2 })
 }
 
 main()

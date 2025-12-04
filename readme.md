@@ -7,6 +7,7 @@ Cocok untuk membuat API modern, scalable, dan mudah di-maintain.
 ---
 
 ![alt text](screenshoot.png)
+![alt text](screenshoot2.png)
 
 ---
 

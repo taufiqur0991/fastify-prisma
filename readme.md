@@ -1,19 +1,12 @@
-# Fastify + Prisma + JWT Authentication (MVC Structure)
+# Fastify + Prisma + Websocket + JWT Authentication (MVC Structure)
 
-Project ini adalah boilerplate siap pakai menggunakan **Fastify**, **Prisma ORM (MariaDB/MySQL)**, **JWT Authentication**, dan struktur **MVC modular**.
+Project ini adalah boilerplate siap pakai menggunakan **Fastify**, **Prisma ORM **, **JWT Authentication**, **Websocket**, dan struktur **MVC modular**.
 
 Cocok untuk membuat API modern, scalable, dan mudah di-maintain.
 
 ---
 
-# ⚙️ Features
-- Fastify 
-- Prisma ORM (MySQL)
-- JWT Auth (Login & Register)
-- Hash password (bcrypt)
-- Modular MVC (Controller, Service, Route)
-- Plugin-based architecture (Prisma & JWT Plugin)
-- Protected Route dengan preHandler
+![alt text](screenshoot.png)
 
 ---
 
@@ -50,6 +43,7 @@ JWT_SECRET="rahasia_jwt_apa_saja"
 > Sesuaikan username, password, dan nama database.
 
 ---
+Jika Model sudah di generate folder "prisma/client", apabila model diperbarui atau model ditambah , maka harus dihapus terlebih dahulu.
 ### Jalankan migrasi:
 ```
 npx prisma migrate dev --name init
@@ -141,23 +135,3 @@ Response:
   "createdAt": "2025-01-01T00:00:00.000Z"
 }
 ```
-
----
-
-# 🔐 Cara Kerja Auth
-
-1. Register → password di-hash dengan bcrypt
-2. Login → diverifikasi, lalu JWT dibuat
-3. Token dipakai untuk akses endpoint /user/profile
-4. Middleware `authVerify` akan menolak request tanpa token
-
----
-
-# 🧩 Struktur Modular (MVC)
-- **Controller**: handle request/response
-- **Service**: bisnis logic
-- **Route**: daftar endpoint
-- **Plugin**: prisma, jwt
-- **Utils**: helper (hash password)
-
----
